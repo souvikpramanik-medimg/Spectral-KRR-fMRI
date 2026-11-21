@@ -104,14 +104,20 @@ when those files are not provided.
 ## Quick Start
 
 ```bash
-git clone https://github.com/<your-username>/spectral-krr.git
-cd spectral-krr
+git clone https://github.com/souvikpramanik-medimg/Spectral-KRR-fMRI.git
+cd Spectral-KRR-fMRI
 pip install -r requirements.txt
 
-# expects data/abide_cc200_asd.npz
+# expects data/abide_cc200_asd.npz (see the note below)
 python src/evaluate.py --config configs/base.yaml     # results -> results/summary_*.csv
 python src/plot.py                                    # results/figure_gain_vs_n.png
 ```
+
+> **Data:** `abide_cc200_asd.npz` is not included in this repository. ABIDE-I can be
+> obtained from the [ABIDE website](http://fcon_1000.projects.nitrc.org/indi/abide/).
+> The script expects an `.npz` file with these arrays (871 subjects, CC200 atlas):
+> `connectomes` (871 × 19900, upper-triangle FC edges), `site`, `age`, `fiq`, `asd`
+> (missing values as NaN; `asd` coded 0 = control, 1 = ASD).
 
 | Stage | Time (T4) |
 |:---|:---:|
