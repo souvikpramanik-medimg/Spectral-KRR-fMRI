@@ -1,0 +1,17 @@
+data:
+  path: data/abide_cc200_asd.npz
+  site: NYU
+  # optional, only needed for the latent ridge / diffusion augmentation baselines
+  z_path: null        # e.g. data/Z_all.npy
+  synth_path: null    # e.g. data/synthetic_latents.npz
+spectral:
+  alpha: 0.3
+  atlas_size: 200
+  adaptive_alphas: [0.1, 0.2, 0.3, 0.4, 0.5]
+model:
+  ridge_alphas: [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]
+eval:
+  n_values: [10, 15, 25, 50, 75, 100]
+  seeds: [0, 1, 2, 3, 4]
+  targets: [age, fiq, asd]
+  out_dir: results
